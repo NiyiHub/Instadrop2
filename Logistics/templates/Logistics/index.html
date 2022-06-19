@@ -1,0 +1,80 @@
+{% extends "Logistics/layout.html" %}
+
+{% block content %}
+
+	<header>
+
+		<a href="" class="instadrop-logo" id="#instatop">
+            <div class="logo" ><img id="instalogo" src="" alt=""></div>
+        </a>
+
+	</header>
+
+	<section class="instadrop-name">
+
+		<div class="instadrop-cover">
+            <div class="instadrop-title">
+                <span>Instadrop</span>
+                <p>
+                    LOGISTIC AND TRANSPORT LIMITED
+                </p>
+                <p>
+                    TRACK YOUR SHIPMENT
+                </p>
+            </div>
+        </div>
+
+        <div class="nav-form">
+            <form class="tracker-form" method=POST action="#">
+                {% csrf_token %}
+                <input class="form-control" type="search" placeholder="Enter Parcel Name or ID" aria-label="Search"
+                name="tracker">
+                <button class="form-control-button" type="submit">Track</button>
+            </form>
+        </div> 
+
+	</section>
+
+	<main>
+		
+		<div class="services-list">
+
+            <!-- SERVICE 1 START -->
+
+            <div class="service">
+                <div class="slide-in from-left ">
+                    <img src="#" alt="">
+                </div>
+                <div class="slide-in from-right ">
+                    <p>
+                        MAKE SHIPMENT NOW
+                    </p>
+                    <a class="slide-in-button" href="#">Enter Parcel Details Here
+                    </a>
+                </div>
+            </div>
+
+            <!-- SERVICE 1 ENDS -->
+
+            <!-- SERVICE 2 STARTS -->
+
+            <div class="service">
+                <div class="slide-in from-left">
+                    <img src="#" alt="">
+                </div>
+                <div class="slide-in from-right">
+                    <p>
+                        ORDER FOR FOOD
+                    </p>
+                    <a class="slide-in-button" href="#">Order For Your Daily Needs Here
+                    </a>
+                </div>
+            </div>
+
+            <!-- SERVICE 2 ENDS -->
+
+        </div>
+
+	</main>
+
+{% endblock %}
