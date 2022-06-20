@@ -1,0 +1,82 @@
+{% extends "Logistics/layout.html" %}
+
+{% block content %}
+
+    <div class="holding">
+
+        <div class="parcel-form-cover">
+
+            <div class="instructions">
+                Enter Shipment Details
+            </div>
+
+             <form action="" method=POST class="main-parcel-form">
+
+                {% csrf_token %}
+
+                    {{ form.as_p }}
+
+               <!--  <p>
+                    <label for="delivery_date"></label>
+                    <input type="date" name="" id="delivery_date">
+                </p>
+
+                <p>
+                    <label for="parcel_content"></label>
+                    <input type="text" name="" id="parcel_content">
+                </p>
+
+                <p>
+                    <label for="parcel_weight"></label>
+                    <input type="text" name="" id="parcel_weight">
+                </p>
+
+                <p>
+                    <label for="Sender"></label>
+                    <input type="text" name="" id="Sender">
+                </p>
+
+                <p>
+                    <label for="Sender_mobile"></label>
+                    <input type="text" name="" id="Sender_mobile">
+                </p>
+
+                 <p>
+                    <label for="Sender_address"></label>
+                    <input type="text" name="" id="Sender_address">
+                </p>
+
+                <p>
+                    <label for="receiver"></label>
+                    <input type="text" name="" id="receiver">
+                </p>
+
+                <p>
+                    <label for="receiver_mobile"></label>
+                    <input type="text" name="" id="receiver_mobile">
+                </p>
+
+                 <p>
+                    <label for="receiver_address"></label>
+                    <input type="text" name="" id="receiver_address">
+                </p>
+
+                <p>
+                    <label for="shipping_agent"></label>
+                    <select name="" id="shipping_agent">
+                        <option value="Instadrop">Instadrop</option>
+                        <option value="Dhl">Dhl</option>
+                        <option value="Ems">Ems</option>
+                        <option value="Bus Park">Bus Park</option>
+                    </select>
+                </p>
+                 -->
+                <input type="submit" value="Submit" class="parcel-form-button">
+
+            </form>
+
+        </div>
+
+    </div>
+
+    {% endblock content %}
