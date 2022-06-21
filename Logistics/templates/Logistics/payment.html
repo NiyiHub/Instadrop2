@@ -1,0 +1,111 @@
+{% extends "Logistics/layout.html" %}
+
+{% block content %}
+
+<main>
+	
+	 <div class="holding shipment-reciever">
+        <div class="parcel-form-cover">
+
+            <div class="instructions">
+                Enter Card Details
+            </div>
+
+            <form action="" method=POST class="main-parcel-form payment">
+
+                <p>
+                    <label for="card">Card Type</label>                    
+                    <select name="card" id="card">
+                        <option value="Visa">Visa</option>
+                        <option value="Verve">Verve</option>
+                        <option value="Master Card">Master Card</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="card_number">Card Number</label>
+                    <input type="text" name="" id="card_number">
+                </p>
+
+                <div class="expiry">
+                    <div class="month">
+                        <label for="state">Expiry Month</label>                    
+                        <select name="month" id="month">
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                          </select>
+                    </div>
+
+                    <div class="year">
+                        <label for="year">Year</label>                    
+                        <select name="year" id="year">
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                          </select>
+                    </div>
+
+                    <div class="cvv">
+                        <label for="cvv">CVV</label>
+                        <input type="text" name="" id="cvv">
+                    </div> 
+
+                </div>
+
+                <div class="card-pin">
+                    <label for="">Card Pin</label>
+                    <div class="pin-head">
+                        <div class="pin-body">
+                            <input name="" id="" >
+                        </div>    
+                        <div class="pins">7</div>
+                        <div class="pins">4</div>
+                        <div class="pins">6</div>
+                        <div class="pins">1</div>
+                        <div class="pins">8</div>
+                        <div class="pins">3</div>
+                        <div class="pins">2</div>
+                        <div class="pins">0</div>
+                        <div class="pins">9</div>
+                        <div class="pins">Clr</div>
+                        <div class="pins">5</div>
+                        <div class="pins">Del</div>
+                    </div>
+                    <div class="terms">
+                        By clicking Pay, I have agreed to this service's <span>Terms and Conditions</span>
+                    </div>
+                </div>  
+
+                <div class="payment-buttons">
+                    <input type="submit" value="Pay" class="card-button">
+                    
+                    <input type="reset" value="Cancel" class="card-button">
+                </div>
+
+                <div class="powered">
+                    powered by Instadrop logistics
+                </div>
+                
+            </form>
+        </div>    
+    </div>
+
+</main>
+
+{% endblock %}

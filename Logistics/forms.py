@@ -78,7 +78,7 @@ class AddressDetailsForm(forms.ModelForm):
         labels = {
             'name': 'Full name',
             'company': 'Company/Brand name',
-            'email': 'Email address',
+            'email': 'Email',
             'address': 'Address',
             'city': 'City/province',
             'state': 'State',
@@ -88,10 +88,10 @@ class AddressDetailsForm(forms.ModelForm):
         widgets = {
             'name':     forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Name'}),
             'company':  forms.TextInput(attrs={'class':'form-control', 'placeholder': '(Optional)'}),
-            'email':    forms.EmailInput(attrs={'class':'form-control', 'placeholder': 'Email Address'}),
+            'email':    forms.EmailInput(attrs={'class':'form-control', 'placeholder': 'Email'}),
             'address':  forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Address'}),
             'city':     forms.TextInput(attrs={'class':'form-control', 'placeholder': 'City/Province'}),
-            'state':    forms.TextInput(attrs={'class':'form-control', 'placeholder': 'State'}),
+            'state':    forms.Select(attrs={'class':'form-select', 'placeholder': 'State'}),
             'mobile':   forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Mobile'}),
         }
 

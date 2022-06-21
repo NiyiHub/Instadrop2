@@ -14,7 +14,44 @@ class AddressDetails(models.Model):
     email                       = models.EmailField()
     address                     = models.CharField(max_length=100)
     city                        = models.CharField(max_length=25)
-    state                       = models.CharField(max_length=25)
+    states                      = (
+                                    ('Abuja', 'Abuja'),
+                                    ('Abia', 'Abia'),
+                                    ('Akwa Ibom', 'Akwa Ibom'),
+                                    ('Anambra', 'Anambra'),
+                                    ('Bauchi', 'Bauchi'),
+                                    ('Benue', 'Benue'),
+                                    ('Borno', 'Borno'),
+                                    ('Cross River', 'Cross River'),
+                                    ('Delta', 'Delta'),
+                                    ('Ebonyi', 'Ebonyi'),
+                                    ('Edo', 'Edo'),
+                                    ('Ekiti', 'Ekiti'),
+                                    ('Enugu', 'Enugu'),
+                                    ('Gombe', 'Gombe'),
+                                    ('Imo', 'Imo'),
+                                    ('Jigawa', 'Jigawa'),
+                                    ('Kaduna', 'Kaduna'),
+                                    ('Kano', 'Kano'),
+                                    ('Katsina', 'Katsina'),
+                                    ('Kebbi', 'Kebbi'),
+                                    ('Kogi', 'Kogi'),
+                                    ('Kwara', 'Kwara'),
+                                    ('Lagos', 'Lagos'),
+                                    ('Nasarawa', 'Nasarawa'),
+                                    ('Niger', 'Niger'),
+                                    ('Ogun', 'Ogun'),
+                                    ('Ondo', 'Ondo'),
+                                    ('Osun', 'Osun'),
+                                    ('Oyo', 'Oyo'),
+                                    ('Plateau', 'Plateau'),
+                                    ('Rivers', 'Rivers'),
+                                    ('Sokoto', 'Sokoto'),
+                                    ('Taraba', 'Taraba'),
+                                    ('Yobe', 'Yobe'),
+                                    ('Zamfara', 'Zamfara')
+                                    )
+    state                       = models.CharField(max_length=25, choices=states)
     mobile                      = models.CharField(max_length=14)
 
     def __str__(self):

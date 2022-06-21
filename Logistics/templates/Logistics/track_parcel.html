@@ -1,0 +1,38 @@
+{% extends "Logistics/layout.html" %}
+
+{% block content %}
+
+<center>
+	
+	<div class="holding parcel-tracking">
+        {% if tracker %}
+            {% for parcel in parcels %}
+                <div class="parcel-cover">
+                    <div class="parcel-details">
+                        <div class="main-detail"><strong>{{ parcel }}</strong></div>
+                        <div class="delivery-date"><b>Delivery Date:</b><br>{{ parcel.delivery_date }}</div>
+                        <div class="sub-details">
+                            <ul>
+                                <li><b>Parcel Content: </b><br> {{ parcel.parcel_content }}</li>
+                                <li><b>Receiver's Mobile: </b> <br> {{ parcel.receiver_mobile }}</li>
+                                <li><b>Delivery Location</b>: <br> {{ parcel.receiver_address }}</li>
+                                <li><b>Receiver's Mobile: </b> <br> {{ parcel.delivery_address.mobile }}</li>
+                                <li><b>Delivery Location</b>: <br> {{ parcel.delivery_address.city }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% else %}
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                <div>
+                    Please Enter A Correct Tracking Number
+                </div>
+            </div> 
+        {% endif %}
+    </div>
+	
+</center>
+
+{% endblock %}
