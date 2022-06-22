@@ -1,0 +1,29 @@
+{% extends "Logistics/layout.html" %}
+
+{% block content %}
+
+<center>
+	
+	 <div class="log-out">
+
+        <div class="logger">
+
+            <div class="main-log">
+                You have been logged out
+            </div>   
+
+            <div class="text">
+                <a href="{% url 'login' %}">Log In Again</a>
+            </div>
+
+        </div>
+
+        <div class="leaving">
+            <img src="images/leaving.png" alt="">
+        </div>
+        
+    </div>
+
+</center>
+
+{% endblock %}

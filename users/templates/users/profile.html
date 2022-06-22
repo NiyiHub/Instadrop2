@@ -1,0 +1,48 @@
+{% extends "Logistics/layout.html" %}
+
+{% block content %}
+
+<center>
+	
+	<div class="holding log">
+
+        <div class="parcel-form-log">
+
+            <div class="instructions">
+               Complete Your Profile
+            </div>
+
+            {% if form.errors %}
+
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                There was an error with your form
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            {% endif %}	
+
+            <form action="{% url 'register' %}" method=POST class="main-log-form">
+
+                {% csrf_token %}    
+
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" name="" id="email" required>
+                </p>
+
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" name="" id="password" required>
+                </p>
+
+                <input type="submit" value="Submit" class="parcel-form-button">
+
+            </form>
+	
+       </div>
+
+   </div>
+
+</center>
+
+{% endblock %}
