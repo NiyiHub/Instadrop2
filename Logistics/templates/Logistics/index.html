@@ -2,11 +2,73 @@
 
 {% block content %}
 
+{% load static %}
+
 	<header>
 
 		<a href="" class="instadrop-logo" id="#instatop">
             <div class="logo" ><img id="instalogo" src="" alt=""></div>
         </a>
+
+        <div class="mobile-button" data-spin="">
+            <img src="{% static 'Logistics/images/menu-icon-hamburger-white.svg' %}" id="burger" alt="" class="open-menu">
+        </div>
+
+        <div class="header" data-appear="">
+
+            <nav class="main-nav">
+
+                <ul class="nav-list">
+
+                    <li class="nav-list-item"><a href="{% url 'Instadrop-home' %}" class="nav-link blackened">Home</a></li>
+
+                    <li class="nav-list-item"><a href="{% url 'Instadrop-about' %}" class="nav-link blackened">About</a></li>
+
+                    <li class="nav-list-item"><a href="{% url 'Shipped-parcels' %}" class="nav-link blackened">Parcels</a></li>
+
+                    <li class="nav-list-item "><a class="nav-link blackened none ">Shipments<i class="fa fa-caret-right"
+                                id="font-awesome" data-shown="right"></i></a>
+
+                        <ul class="sub-list-nav whitened">
+                            <li class="sub-list-item"><a href="{% url 'sender-info' %}" class="sub-link reddened">Create Shipment</a> </li>
+
+                            <li class="sub-list-item"><a href="{% url 'Shipment-from-desk' %}" class="sub-link reddened">Parcel</a></li>
+
+                            <li class="sub-list-item"><a href="{% url 'place-order' %}" class="sub-link reddened">Place an order</a></li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- LINKS RELATING TO USERS -->
+
+            <div class="side-nav">
+
+                <ul class="side-nav-list">
+
+                  {% if user.is_authenticated %}
+
+                    <li class="side-nav-item"><a href="{% url 'profile' %}" class="side-nav-link switch">Profile</a></li>
+                    <li class="side-nav-item"><a href="{% url 'logout' %}" class="side-nav-link">Log Out</a></li>
+
+                  {% else %}
+
+                    <li class="side-nav-item hidden"><a href="{% url 'register' %}" class="side-nav-link switch">Register</a></li>
+                    <li class="side-nav-item hidden"><a href="{% url 'login' %}" class="side-nav-link">Login</a></li>
+
+                  {% endif %}
+
+                </ul>
+
+            </div>
+
+            <!-- LINKS RELATING TO USERS ENDS  -->
+
+        </div>
 
 	</header>
 
@@ -33,9 +95,91 @@
             </form>
         </div> 
 
-	</section>
+        <div class="marquee">
+            <div class="major">
+                <p>
+                    Fast Services: <br>Get your Orders delivered within the hour          
+                </p>
+                <p>
+                    Delivery on Demand: <br>Food Delivery, Grocery shopping, Doorstep Deliveries, and more
+                </p>
+                <p>
+                    Reliable Service: <br>You can rest assured knowing that your parcels are in good hands.
+                </p>
+                <p>
+                    Affordable Rates: <br>
+                    No need to break the bank, we offer the best market rates
+                </p>
+            </div>
+        </div>
+
+    </section>
 
 	<main>
+
+        <div class="effect-wrap">
+            <div class="effect effect-1"></div>
+            <div class="effect effect-2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="effect effect-3"></div>
+            <div class="effect effect-4"></div>
+            <div class="effect effect-5">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <hr class="effect effect-6">       
+        </div> 
 		
 		<div class="services-list">
 
@@ -43,13 +187,13 @@
 
             <div class="service">
                 <div class="slide-in from-left ">
-                    <img src="#" alt="">
+                    <img src="{% static 'Logistics/images/making-shipment.jpg' %} " alt="">
                 </div>
                 <div class="slide-in from-right ">
                     <p>
                         MAKE SHIPMENT NOW
                     </p>
-                    <a class="slide-in-button" href="#">Enter Parcel Details Here
+                    <a class="slide-in-button" href="{% url 'sender-info' %}">Enter Parcel Details Here
                     </a>
                 </div>
             </div>
@@ -60,13 +204,13 @@
 
             <div class="service">
                 <div class="slide-in from-left">
-                    <img src="#" alt="">
+                    <img src="{% static 'Logistics/images/order-food.jpg' %}" alt="">
                 </div>
                 <div class="slide-in from-right">
                     <p>
                         ORDER FOR FOOD
                     </p>
-                    <a class="slide-in-button" href="#">Order For Your Daily Needs Here
+                    <a class="slide-in-button" href="{% url 'place-order' %}">Order For Your Daily Needs Here
                     </a>
                 </div>
             </div>
@@ -76,5 +220,86 @@
         </div>
 
 	</main>
+    <script src="{% static 'Logistics/js/observer.js' %}"></script>
+
+    <section class="footer">
+
+    <div class="footer-background">
+
+        <div class="main-image">
+            <a href="" class="instadrop-logo"><img src="{% static 'Logistics/images/instadrop-logo-white.svg' %}" alt=""></a>
+        </div>
+
+        <div class="socials">
+
+            <p>
+                GET IN TOUCH
+            </p>
+
+            <p>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-telegram-plane"></i></a>
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+            </p>
+
+            <p>
+                Email Us: <br>
+                <a class="main-mail" href="mailto: instadropHQ@gmail.com">instadropHQ@gmail.com</a>
+                <p>
+                    +234 (0)704 804 6484
+                </p>
+            </p>
+
+            <div class="motorbike">
+                <img src="{% static 'Logistics/images/card-board.png' %}" alt="">
+            </div>
+
+        </div>
+
+        <div class="addresses">
+
+            <p>VISIT US</p>
+
+            <p>
+                Lagos <br>
+                Dagunro close, off Associate Ave, Ojota, Lagos <br>
+                0912 234 7017 | 0704 804 6484
+            </p>
+
+            <p>
+                Osun, Ile-Ife <br>
+                206, Ruth n Boaz Plaza, Mayfair, Ile-Ife, Osun State. <br>
+                0704 804 6484
+            </p>
+
+            <p>
+                Oyo, Ibadan <br>
+                85, Adebayo Idito Road, Sango Eleyele (The Poly Ibadan). <br>
+                0704 804 6484
+            </p>
+
+            <p>
+                Osun, Oshogbo <br>
+                Ush Pro, Alekuwodo, Oshogbo, Osun State. <br>
+                0706 828 4982 | 0704 804 6484
+            </p>
+
+        </div>
+
+        <div class="scooter-pic">
+            <img src="{% static 'Logistics/images/okada.png' %}" alt="">
+        </div>
+
+    </div>
+
+    <div class="courtesy">
+        <hr>
+        &copy;2022 Instadrop Logistic Service
+        <hr>
+    </div>
+
+</section>
 
 {% endblock %}
