@@ -1,33 +1,55 @@
 {% extends "Logistics/layout.html" %}
 
 {% block content %}
+{% load static %}
 
 	<center>
+
+		<div class="holding log">
+
+	        <div class="insta left">
+	            <img src="{% static 'users/images/instadrop-logo-white.svg' %}" alt="">
+	        </div>
 		
-		<div class="parcel-form-log">
+			<div class="parcel-form-log">
 
-		        <div class="instructions">
-		            SIGN IN
-		        </div>
+			        <div class="instructions">
+			            SIGN IN
+			        </div>
 
-		    {% if form.errors %}
+			    {% if form.errors %}
 
-		        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-		            There was an error with your form
-		            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		        </div>
+			        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+			            There was an error with your form
+			            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			        </div>
 
-		    {% endif %}	
+			    {% endif %}	
 
-		        <form action="{% url 'login' %}" method=POST class="main-log-form">
+			        <form action="{% url 'login' %}" method=POST class="main-log-form">
 
-		            {% csrf_token %}
+			            {% csrf_token %}
 
-		            {{ form.as_p }}    
+			            {{ form.as_p }}    
 
-		            <input type="submit" value="Login" class="parcel-form-button">
+			            <input type="submit" value="Login" class="parcel-form-button">
 
-		        </form>
+			            <div class="form-group">
+			                <small class="text-muted ml-2">
+			                    <a href="{% url 'password_reset' %}">Forgot Password?</a>
+			                </small>
+            			</div>
+
+				        <div class="border-top pt-3">
+				            <small class="text-muted">
+				                Don't Have An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+				            </small>
+	         			</div>
+
+			        </form>
+
+			</div>
+
 		</div>
 
 	</center>

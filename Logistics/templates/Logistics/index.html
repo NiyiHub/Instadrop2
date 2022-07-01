@@ -4,10 +4,10 @@
 
 {% load static %}
 
-	<header>
+	<header class="whitened">
 
 		<a href="" class="instadrop-logo" id="#instatop">
-            <div class="logo" ><img id="instalogo" src="" alt=""></div>
+            <div class="logo" ><img id="instalogo" src="{% static 'Logistic/images/instadrop-logo-black.svg' %}" alt=""></div>
         </a>
 
         <div class="mobile-button" data-spin="">
@@ -26,20 +26,26 @@
 
                     <li class="nav-list-item"><a href="{% url 'Shipped-parcels' %}" class="nav-link blackened">Parcels</a></li>
 
-                    <li class="nav-list-item "><a class="nav-link blackened none ">Shipments<i class="fa fa-caret-right"
+                    <li class="nav-list-item "><a class="nav-link blackened none ">Services<i class="fa fa-caret-right"
                                 id="font-awesome" data-shown="right"></i></a>
 
                         <ul class="sub-list-nav whitened">
                             <li class="sub-list-item"><a href="{% url 'sender-info' %}" class="sub-link reddened">Create Shipment</a> </li>
 
+                            {% if user.is_authenticated and user.is_staff %}
+
                             <li class="sub-list-item"><a href="{% url 'Shipment-from-desk' %}" class="sub-link reddened">Parcel</a></li>
+
+                            <li class="nav-list-item"><a href="{% url 'Shipped-parcels' %}" class="nav-link blackened">Parcels</a></li>
+
+                            {% endif %}
 
                             <li class="sub-list-item"><a href="{% url 'place-order' %}" class="sub-link reddened">Place an order</a></li>
 
                         </ul>
 
                     </li>
-
+                    
                 </ul>
 
             </nav>
@@ -54,11 +60,12 @@
 
                     <li class="side-nav-item"><a href="{% url 'profile' %}" class="side-nav-link switch">Profile</a></li>
                     <li class="side-nav-item"><a href="{% url 'logout' %}" class="side-nav-link">Log Out</a></li>
+                    <li class="side-nav-item"><a href="{% url 'history' %}" class="side-nav-link">History</a></li>
 
                   {% else %}
 
-                    <li class="side-nav-item hidden"><a href="{% url 'register' %}" class="side-nav-link switch">Register</a></li>
-                    <li class="side-nav-item hidden"><a href="{% url 'login' %}" class="side-nav-link">Login</a></li>
+                    <li class="side-nav-item"><a href="{% url 'register' %}" class="side-nav-link switch">Register</a></li>
+                    <li class="side-nav-item"><a href="{% url 'login' %}" class="side-nav-link">Login</a></li>
 
                   {% endif %}
 
@@ -76,13 +83,17 @@
 
 		<div class="instadrop-cover">
             <div class="instadrop-title">
+
                 <span>Instadrop</span>
+
                 <p>
                     LOGISTIC AND TRANSPORT LIMITED
                 </p>
+
                 <p>
                     TRACK YOUR SHIPMENT
                 </p>
+
             </div>
         </div>
 
@@ -191,9 +202,9 @@
                 </div>
                 <div class="slide-in from-right ">
                     <p>
-                        MAKE SHIPMENT NOW
+                        MAKE SHIPMENT NOW.
                     </p>
-                    <a class="slide-in-button" href="{% url 'sender-info' %}">Enter Parcel Details Here
+                        <a class="slide-in-button" href="{% url 'sender-info' %}">Create Shipment.
                     </a>
                 </div>
             </div>
@@ -208,9 +219,9 @@
                 </div>
                 <div class="slide-in from-right">
                     <p>
-                        ORDER FOR FOOD
+                        GET YOUR DAILY NEEDS.
                     </p>
-                    <a class="slide-in-button" href="{% url 'place-order' %}">Order For Your Daily Needs Here
+                    <a class="slide-in-button" href="{% url 'place-order' %}">Place an order.
                     </a>
                 </div>
             </div>

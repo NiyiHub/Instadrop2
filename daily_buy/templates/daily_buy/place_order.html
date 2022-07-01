@@ -1,19 +1,46 @@
 {% extends "Logistics/layout.html" %}
 
 {% block content %}
+{% load static %}
     <center>
 
-        <h1>Place an order</h1>
+        <div class="holding place-order">
 
-        <br/><br/>
+            <div class="parcel-form-cover">
 
-            <form action="" method=POST>
-                {% csrf_token %}
+                <div class="instructions">
+                    Place an Order
+                </div>
 
-                {{ form.as_p }}
+                <div class="main-parcel-form payment black">
+                    <p>PLEASE NOTE</p>
+                    <ul>
+                        <li>
+                            This service is only available to Ile-Ife residents.
+                        </li>
+                        <li>
+                            An Instadrop agent will reach out to you for your bill.
+                        </li>
+                        <li>
+                            Every delivery costs &#8358;500.
+                        </li>
+                    </ul>
+                </div>
 
-                <input type="submit" value="Submit" class="btn btn-secondary">
-            </form>
+               <br/><br/>
+
+                <form action="" method=POST class="main-parcel-form">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <input type="submit" value="Submit" class="btn btn-secondary">
+                </form>
+
+            </div>
+
+        </div>
 
     </center>
+    <script src="{% static 'Logistics/js/formObserver.js' %}"></script>
 {% endblock content %}

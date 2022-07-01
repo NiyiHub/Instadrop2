@@ -1,10 +1,15 @@
 {% extends "Logistics/layout.html" %}
 
 {% block content %}
+{% load static %}
 
 	<center>
 		
 		<div class="holding log">
+
+			<div class="insta left">
+            	<img src="{% static 'users/images/instadrop-logo-white.svg' %}" alt="">
+            </div>
 
 		    <div class="parcel-form-log">
 
@@ -28,10 +33,18 @@
 
 		        <input type="submit" value="Create Account" class="parcel-form-button-one">
 				
+		        <div class="border-top pt-3">
+		            <small class="text-muted">
+		                Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+		            </small>
+        		</div>
+
 		    </div>
 
 		</div>
 
 	</center>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 {% endblock %}

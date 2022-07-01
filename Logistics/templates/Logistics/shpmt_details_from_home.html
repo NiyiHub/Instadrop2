@@ -1,6 +1,7 @@
 {% extends "Logistics/layout.html" %}
 
 {% block content %}
+{% load static %}
 
 <center>
 
@@ -12,7 +13,22 @@
                 Enter Shipment Details
             </div>
 
-             <form action="" method=POST class="main-parcel-form">
+            <div class="main-parcel-form payment black">
+                <p>PLEASE NOTE</p>
+                <ul>
+                    <li>
+                        Delivery to Lagos(Mainland): &#8358;2,100
+                    </li>
+                    <li>
+                        Delivery to Lagos(Island): &#8358;2,700
+                    </li>
+                    <li>
+                        Delivery to Ibadan: &#8358;1,500
+                    </li>
+                </ul>
+            </div>
+
+            <form action="" method=POST class="main-parcel-form">
 
                 {% csrf_token %}
 
@@ -27,5 +43,7 @@
     </div>
 
 </center>
+
+<script src="{% static 'Logistics/js/formObserver.js' %}"></script>
 
 {% endblock content %}

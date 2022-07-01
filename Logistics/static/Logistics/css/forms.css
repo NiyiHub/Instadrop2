@@ -164,6 +164,7 @@ p textarea{
 .parcel-form-button{
     padding: 10px;
     text-transform: capitalize;
+    text-decoration: none;
     font-size: 1.2rem;
     border: none;
     background-color: var(--color-2);
@@ -171,11 +172,28 @@ p textarea{
     margin-bottom: 1.5rem;
     width: 120px;
 }
-.parcel-form-button:hover , .parcel-form-button-one:hover{
+.parcel-form-button:hover , 
+.parcel-form-button-one:hover,
+.parcel-form-button.two:hover{
     background-color: var(--color-5);
     color: var(--font-color-2);
     transition: all 0.2s ease-in-out;
 }
+
+.parcel-form-button.two{
+    padding: 10px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: none;
+    background-color: var(--color-2);
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+    width: 120px;
+    color: var(--official-color-black);
+}
+
+
 
 .parcel-form-button-one{
     padding: 10px;
@@ -285,11 +303,31 @@ p textarea{
 }
 
 
-.main-parcel-form.payment{
+.main-parcel-form.payment, .main-parcel-form.update{
     background: rgba(255, 255, 255, 0.774);
 }
+.main-parcel-form.payment.black{
+    background-color: var(--official-color-black);
+    color: antiquewhite;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: 2px solid antiquewhite;
+}
 
-.main-parcel-form.payment > p > label{
+.main-parcel-form.payment.black p{
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-weight: 700;
+    color: antiquewhite;
+}
+.main-parcel-form.payment.black > ul > li{
+    margin-top: .3rem;
+}
+
+
+.main-parcel-form.payment > p > label,
+.main-parcel-form.update > p > label
+{
     color: black;
     margin-left: 0;
 }
@@ -409,4 +447,64 @@ p textarea{
     margin: 2rem 0;
     color: black;
     text-align: center;
+}
+
+/* PROFILES */
+
+.profiler{
+    /* background-color: red; */
+    color: var(--official-color-black);
+    text-align: center; 
+    font-size: 1.8em;
+    font-weight: 500;
+    line-height: 2;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    padding: 2.5rem 0 0 0;
+    margin-bottom: 1em;
+    margin-top: 2rem;
+}
+
+.insta.left img{
+    display: block;
+    max-width: 70%;
+}
+
+.insta.right
+{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: end;
+}
+.insta.right img{
+    
+    width: 120px;
+}
+
+.profile-box{
+    padding: 1rem;
+    word-break: break-all;
+}
+.profile-box > img{
+    display: block;
+    width: 100%;
+    min-width: 200px;
+    max-height: 290px;
+}
+
+.profile-box p{
+    color: var(--official-color-black);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.profile-box p:first-of-type{
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.profile-box p > strong{
+    font-size: larger;
+    font-weight: 700;
+    word-spacing: 1px;
 }

@@ -1,10 +1,11 @@
 {% extends "Logistics/layout.html" %}
 
 {% block content %}
+{% load static %}
 
-	<main>
+<main>
 		
-		 <section class="about-us">
+	<section class="about-us">
         <div class="about-us-header">
             <span>ABOUT US</span> 
         </div>
@@ -12,7 +13,7 @@
             
             <div class="content-box">
                 <div class="image-content">
-                    <img src="#" alt="">
+                    <img src="{% static 'Logistics/images/delivery-service.webp' %}" alt="">
                 </div>
                 <div class="word-content">
                     <p>
@@ -37,13 +38,13 @@
                     </p>
                 </div>
                 <div class="image-content">
-                    <img src="#" alt="">
+                    <img src="{% static 'Logistics/images/your-go-to.jpg' %}" alt="">
                 </div>
             </div>
 
             <div class="content-box">
                 <div class="image-content">
-                    <img src="#" alt="">
+                    <img src="{% static 'Logistics/images/dleivery-success.jpg' %}" alt="">
                 </div>
                 <div class="word-content">
                     <p>
@@ -59,6 +60,8 @@
 
     </section>
 
-	</main>
+</main>
+
+<script src="{% static 'Logistics/js/aboutObserver.js' %}"></script>
 
 {% endblock %}

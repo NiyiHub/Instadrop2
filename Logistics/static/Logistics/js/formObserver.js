@@ -17,7 +17,7 @@ function displayMenu(e)
     var menuOptionSelected = menuOption.getAttribute("data-appear");
     if(e.type == "click"){
         if(menuOptionSelected == ""){
-            document.getElementById("burger").src = "./images/menu-icon-hamburger-white.svg";
+            document.getElementById("burger").src = "{% static 'Logistics/images/menu-icon-hamburger-white.svg' %}";
             menuOption.setAttribute("data-appear", "true");
             navButton.setAttribute("data-spin","spinning");
             // whitenHeader.unobserve(instadropTitle);
@@ -104,8 +104,8 @@ const whitenHeader = new IntersectionObserver(function(entries, whitenHeader){
         if(!entry.isIntersecting)
         {
             header.classList.add("whitened");
-            document.getElementById("burger").src = "./images/menu-icon-hamburger-black.svg";
-            document.getElementById("instalogo").src = "./images/instadrop-logo-black.svg";          
+            document.getElementById("burger").src = "{% static 'Logistics/images/menu-icon-hamburger-black.svg' %}";
+            document.getElementById("instalogo").src = "{% static 'Logistics/images/instadrop-logo-black.svg' %}";          
             navlinks.forEach(link =>{
                 link.classList.add("blackened");
             });
@@ -119,8 +119,8 @@ const whitenHeader = new IntersectionObserver(function(entries, whitenHeader){
         }
         else{
             header.classList.remove("whitened");
-            document.getElementById("burger").src = "./images/menu-icon-hamburger-white.svg";
-            document.getElementById("instalogo").src = "./images/instadrop-logo-white.svg"; 
+            document.getElementById("burger").src = "{% static 'Logistics/images/menu-icon-hamburger-black.svg' %}";
+            document.getElementById("instalogo").src = "{% static 'Logistics/images/instadrop-logo-black.svg' %}"; 
             navlinks.forEach(link =>{
                 link.classList.remove("blackened");
             });

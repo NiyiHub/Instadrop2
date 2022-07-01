@@ -19,7 +19,7 @@ class ParcelForm(forms.ModelForm):
             'receiver': "Receiver's name",
             'receiver_mobile': "Receiver's phone number",
             'receiver_address': "Receiver's address",
-            'shipping_agent': 'shipping_agent'
+            'shipping_agent': 'shipping agent'
         }
 
 
@@ -33,7 +33,7 @@ class ParcelForm(forms.ModelForm):
             'receiver':             forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Receiver'}),
             'receiver_mobile':      forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Receiver Mobile'}),
             'receiver_address':     forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Reiceiver Address'}),
-            'shipping_agent':       forms.Select(attrs={'class': 'form-select', 'placeholder': 'shipping_agent'})
+            'shipping_agent':       forms.Select(attrs={'class': 'form-select', 'placeholder': 'shipping agent'})
         }
 
 
@@ -53,7 +53,7 @@ class ShipmentForm(forms.ModelForm):
             'pickup_date': 'Pickup date (YYYY-MM-DD)',
             'parcel_type': 'Parcel type',
             'payment_type': 'Payment method',
-            'shipping_agent': 'shipping_agent'
+            'shipping_agent': 'shipping agent'
         }
 
         widgets = {
@@ -65,7 +65,7 @@ class ShipmentForm(forms.ModelForm):
             'pickup_date':      forms.DateInput(attrs={'class':'form-control', 'placeholder': 'PickUp Date'}),
             'parcel_type':      forms.Select(attrs={'class':'form-select', 'placeholder': 'Parcel Type'}),
             'payment_type':     forms.Select(attrs={'class':'form-select', 'placeholder': 'Payment Method'}),
-            'shipping_agent':   forms.Select(attrs={'class': 'form-select', 'placeholder': 'shipping_agent'})
+            'shipping_agent':   forms.Select(attrs={'class': 'form-select', 'placeholder': 'shipping agent'})
         }
 
 
