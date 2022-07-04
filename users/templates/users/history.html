@@ -1,0 +1,33 @@
+{% extends "Logistics/layout.html" %}
+
+{% block content %}
+
+<center>
+
+	<div class="container">
+	    <h1>History</h1>
+	    <br>
+	   
+	    {% for parcel in user_history %}
+
+	    <div class="card">
+	        <div class="card-header">
+	            <strong>{{ parcel }}</strong>
+	        </div>
+	        <div class="card-body">
+	          <h5 class="card-title">Delivery Date: {{ parcel.delivery_date }}</h5>
+	          <p class="card-text"><ul>
+	            <li>Delivery Location: {{ parcel.receiver_address }}</li>
+	            <li>Parcel Content: {{ parcel.parcel_content }}</li>
+	            <li>Receiver's Mobile: {{ parcel.receiver_mobile }}</li>
+	            </ul>
+	        </div>
+	    </div>
+
+	        <br>
+	    {% endfor %}    
+	</div>
+
+</center>
+
+{% endblock %}

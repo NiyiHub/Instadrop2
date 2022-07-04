@@ -95,6 +95,15 @@ class Parcel(models.Model):
     def __str__(self):
         return self.tracking_number
 
+
+    def get_absolute_url(self):
+        return reverse('parcel-detail', kwargs={'pk': self.pk})
+
+
+# class History(models.Model):
+#     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+ 
+
     
 
 

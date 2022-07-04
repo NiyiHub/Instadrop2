@@ -1,6 +1,7 @@
 {% extends "Logistics/layout.html" %}
 
 {% block content %}
+{% load static %}
 
 <center>
 	
@@ -23,7 +24,7 @@
         </div>
 
         <div class="leaving">
-            <img src="images/leaving.png" alt="">
+            <img src="{% static 'Logistics/images/leaving.png' %}" alt="">
         </div>
         
     </div>

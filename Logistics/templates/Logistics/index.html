@@ -36,8 +36,6 @@
 
                             <li class="sub-list-item"><a href="{% url 'Shipment-from-desk' %}" class="sub-link reddened">Parcel</a></li>
 
-                            <li class="nav-list-item"><a href="{% url 'Shipped-parcels' %}" class="nav-link blackened">Parcels</a></li>
-
                             {% endif %}
 
                             <li class="sub-list-item"><a href="{% url 'place-order' %}" class="sub-link reddened">Place an order</a></li>
@@ -100,7 +98,7 @@
         <div class="nav-form">
             <form class="tracker-form" method=POST action="{% url 'track-parcel' %}">
                 {% csrf_token %}
-                <input class="form-control" type="search" placeholder="Enter Parcel Name or ID" aria-label="Search"
+                <input class="form-control" type="search" placeholder="Enter Tracking Number" aria-label="Search"
                 name="tracker">
                 <button class="form-control-button" type="submit">Track</button>
             </form>

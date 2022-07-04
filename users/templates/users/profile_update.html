@@ -1,0 +1,33 @@
+{% extends 'Logistics/layout.html' %}
+
+{% block content %}
+{% load static %}
+
+        <div class="holding">
+
+            <div class="insta left">
+                <img src="{% static 'Logistics/images/instadrop-logo-white.svg' %}" alt="">
+            </div>
+
+            <div class="parcel-form-cover">
+
+                <div class="instructions">
+                    Update Your Profile
+                </div>
+
+                <form method="POST" enctype="multipart/form-data" class="main-parcel-form payment">
+                    
+                    {{ form.as_p }}
+                    <button type="submit" class="parcel-form-button-one">Update</button>
+
+                </form>
+
+                <div class="text-center">
+                    <a class="small" href="{% url 'index' %}"></a>
+                </div>
+
+            </div> 
+
+        </div>
+
+{% endblock %}

@@ -14,11 +14,11 @@ const whitenHeader = new IntersectionObserver(function(entries, whitenHeader){
         if(!entry.isIntersecting)
         {
             header.classList.add("whitened");
-            document.getElementById("burger").src = "{% static 'Logistics/images/menu-icon-hamburger-black.svg' %}";
+            document.getElementById("burger").src = "./images/menu-icon-hamburger-black.svg";
             navlinks.forEach(link =>{
                 link.classList.add("blackened");
             });
-            document.getElementById("instalogo").src = "{% static 'Logistics/images/instadrop-logo-black.svg' %}";          
+            document.getElementById("instalogo").src = "./images/instadrop-logo-black.svg";          
             sublistNav.classList.add("whitened");
             subLinks.forEach(sublink =>{
                 sublink.classList.add("reddened");
@@ -29,8 +29,8 @@ const whitenHeader = new IntersectionObserver(function(entries, whitenHeader){
         }
         else{
             header.classList.remove("whitened");
-            document.getElementById("burger").src = "{% static 'Logistics/images/menu-icon-hamburger-white.svg' %}";
-            document.getElementById("instalogo").src = "{% static 'Logistics/images/instadrop-logo-white.svg %}";          
+            document.getElementById("burger").src = "./images/menu-icon-hamburger-white.svg";
+            document.getElementById("instalogo").src = "./images/instadrop-logo-white.svg";          
             navlinks.forEach(link =>{
                 link.classList.remove("blackened");
             });
@@ -92,12 +92,12 @@ serviceWords.forEach(word =>{
     showOnScroll.observe(word)
 })
 
- ADDING JAVASCRIPT FOR SHIPMENT NAV START
+//  ADDING JAVASCRIPT FOR SHIPMENT NAV START
 
 let mainNavItem = document.querySelectorAll(".nav-list-item");
  
 
-let shipmentMenu = document.querySelector(".sub-list-nav");
+var shipmentMenu = document.querySelector(".sub-list-nav");
 
 const navItemShipment = mainNavItem[3];
 
@@ -123,7 +123,7 @@ navItemShipment.addEventListener("click", showShipmentMenu);
 //  ADDING JAVASCRIPT FOR SHIPMENT NAV ENDS
 
 // JAVASCRIPT FOR NAVIGATION BUTTON STARTS
-let navButton = document.querySelector(".mobile-button");
+var navButton = document.querySelector(".mobile-button");
 const menuOption = document.querySelector(".header");
 
 function displayMenu(e)
@@ -131,6 +131,7 @@ function displayMenu(e)
     var menuOptionSelected = menuOption.getAttribute("data-appear");
     if(e.type == "click"){
         if(menuOptionSelected == ""){
+            document.getElementById("burger").src = "./images/menu-icon-hamburger-white.svg" 
             menuOption.setAttribute("data-appear", "true");
             navButton.setAttribute("data-spin","spinning");
             whitenHeader.unobserve(instadropTitle);
@@ -146,7 +147,7 @@ function displayMenu(e)
         {
             menuOption.setAttribute("data-appear", "false");
             navButton.setAttribute("data-spin","");
-            // whitenHeader.observe(instadropTitle);
+            whitenHeader.observe(instadropTitle);
         }
         else if (menuOptionSelected == "false")
         {
@@ -164,6 +165,7 @@ function displayMenu(e)
         }
         console.log(opin);
     };
+
     setTimeout(revert, 500);
 }
 

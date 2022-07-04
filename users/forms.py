@@ -2,7 +2,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate
 
-from .models import UserAccount
+from .models import UserAccount, Profile
+from django.conf import settings
+from django.contrib.auth import get_user_model
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(max_length=60)
@@ -25,3 +27,18 @@ class LoginForm(forms.ModelForm):
 
             if not authenticate(email=email, password=password):
                 raise forms.ValidationError('Invalid login details. Try again!')
+
+
+class UserUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = UserAccount
+        fields = ['email', 'phone', 'phone2', 'address']
+
+
+class ProfileUpdateForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ['image', 'brand_name', 'about_brand']

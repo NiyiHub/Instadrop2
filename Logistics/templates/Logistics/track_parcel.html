@@ -14,10 +14,16 @@
                         <div class="sub-details">
                             <ul>
                                 <li><b>Parcel Content: </b><br> {{ parcel.parcel_content }}</li>
-                                <li><b>Receiver's Mobile: </b> <br> {{ parcel.receiver_mobile }}</li>
-                                <li><b>Delivery Location</b>: <br> {{ parcel.receiver_address }}</li>
+
+                                {% if parcel.delivery_address.mobile and parcel.delivery_address.city %}
+
                                 <li><b>Receiver's Mobile: </b> <br> {{ parcel.delivery_address.mobile }}</li>
                                 <li><b>Delivery Location</b>: <br> {{ parcel.delivery_address.city }}</li>
+
+                                {% endif %}
+                                
+                                <li><b>Receiver's Mobile: </b> <br> {{ parcel.receiver_mobile }}</li>
+                                <li><b>Delivery Location</b>: <br> {{ parcel.receiver_address }}</li>
                             </ul>
                         </div>
                     </div>

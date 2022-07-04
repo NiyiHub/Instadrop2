@@ -28,9 +28,9 @@
     padding: 0;
     /* overflow-x: hidden; */
 }
-body{
+/* body{
     background-color: var(--official-color);
-}
+} */
 /* Navigation Starts */
 
 
@@ -349,9 +349,8 @@ a.sub-link.reddened{
         padding: 0 .5rem .5rem .5rem ;
         transform: translateX(100%); 
         min-height: 100vh;
-        /* background: rgba(65, 64, 64, 0.404);*/
-        background: var(--official-color);
-        backdrop-filter: blur(0.8rem); 
+        background: rgba(65, 64, 64, 0.404);
+        backdrop-filter: blur(0.8rem);
         gap: 0;
         z-index: 999;
     }
@@ -640,11 +639,11 @@ main{
     /* margin: 0 2rem; */
 }
 
-
 .effect-wrap .effect{
     position: absolute;
     z-index: -1;
     /* background: linear-gradient(to right,rgba(217, 224, 235, 0.87),rgba(226, 228, 236, 0.959)); */
+
 }
 .effect-1{
     width: 350px;
@@ -820,4 +819,372 @@ main{
 
 .slide-in.from-right.appear{
     opacity: 1;
-    anima
+    animation: leftBounce 1.2s ease-in-out ;
+}
+
+@keyframes leftBounce{
+    0%,50%{
+        opacity: 0;
+        transform: translateX(30%);  
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+.slide-in.from-right > p{
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-style: italic;
+    color: var(--official-color-black);
+    line-height: 1.5;
+    /* text-shadow: -2px 2px var(--official-color-black); */
+}
+
+.slide-in.from-right .slide-in-button{
+    
+    padding: .6rem;
+    color: var(--official-color);
+    font-size: 1.1rem;
+    font-weight: 300;
+    background-color: var(--official-color-black);
+    border: none;
+    /* border: 1px solid black; */
+    border-radius: 30px;
+    width: 250px;
+    align-self: center;
+    text-decoration: none;
+}
+.slide-in.from-right .slide-in-button:hover,
+.slide-in.from-right .slide-in-button:focus
+{
+    background-color: var(--official-color);
+    border-radius: 30px;
+    border: 2px solid var(--official-color-black);
+    color: var(--official-color-black);
+    font-weight: 500;    
+    transition: 250ms ease-in-out;
+}
+
+.slide-in.from-left{
+    opacity: 0;
+    
+}
+
+.slide-in.slide-in.from-left.fade-in{
+    opacity: 1;
+    animation: rightBounce 1.2s ease-in-out ;
+}
+
+@keyframes rightBounce {
+    0%,50%{
+        opacity: 0;
+        transform: translateX(-30%);  
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+}
+/* EACH SERVICE ON HOMEPAGE ENDS */
+
+/* MEDIA QUERIES FOR THE HOMEPAGE STARTS */
+
+@media(min-width:1000px)
+{
+    .services-list{
+        flex-direction: row;
+    }
+    .service{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    
+
+    .slide-in.from-right.appear,
+    .slide-in.slide-in.from-left.fade-in
+    {
+        animation: unset;
+        opacity: 1;
+        transition: opacity 250ms ease-in;
+    }
+
+}
+
+
+
+/* MEDIA QUERIES FOR THE HOMEPAGE ENDS */
+
+
+/* FOOTER STARTS */
+    .footer{
+        background-color: var(--official-color-black);
+        color: white;
+        margin: 2rem 2rem 2rem 2rem;
+        border-radius: 30px;
+        padding: .5rem;
+    }
+    .footer-background{
+        display: grid;
+        gap: 1rem;
+        text-align: center;
+        /* padding: 0 2rem; */
+    }
+    .main-image{
+        margin-top: 2rem;
+        grid-column-start: auto;
+        grid-column-end: auto;  
+    }
+    .main-image .instadrop-logo img{
+        display: block;
+        width: 100%;
+       max-height: 50px;
+    } 
+
+    .socials{
+        padding: 1.5rem 0 0 0;
+    }
+    .socials p:first-of-type, .addresses p:first-of-type{
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: .7rem;
+    }
+    .socials p i{
+        font-size: 20px;
+        margin: 0 .5rem .5rem 0;
+        color: var(--official-color);
+    }
+    .socials > p:last-of-type > a, .main-mail{
+        text-decoration: none;
+        color: var(--font-color-2);
+        letter-spacing: 1px;
+        line-height: 1.5;
+        margin: 1rem 0 1rem 0;
+    }
+
+    .addresses p:not(:first-of-type)
+    {
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .courtesy{
+        text-align: center;
+    }
+    .scooter-pic,.motorbike{
+        display:none;
+    }
+    .courtesy hr{
+        margin: 1rem 0;
+    }
+
+
+    @media(min-width:850px){
+        .footer-background{
+            padding: 0 2rem;
+        }
+        .main-image{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            justify-self: flex-start;
+        }
+        .socials{
+            grid-row-start: 2;
+            grid-row-end: 2;
+            padding: 0 .5rem;
+        }
+        .socials p:last-of-type{
+            line-height: 1.5;
+        }
+        .addresses{
+            display: grid;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-template-columns: repeat(2, minmax(0 , 2fr));
+        }
+
+        .addresses p:first-of-type{
+            grid-row-start:0;
+            grid-row-end:2;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .addresses p:not(:first-of-type){
+            margin-right: 1rem;
+        }
+    }
+    @media(min-width:1100px)
+    {
+        .footer-background{
+            padding-left: 2rem;
+        }
+        .socials{
+            grid-column-start: 1;
+            grid-column-end:2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .courtesy{
+            padding: 0 4rem;
+        }
+
+        .motorbike{
+            display: grid;
+            padding: 2rem 0 0 0;
+            background: transparent;             
+        }
+        .motorbike img{
+            display: block;
+            width: 100%;
+            height: 200px;
+        }
+        .scooter-pic{
+            display: block;
+            align-content: baseline;
+            width: 100%;
+        }
+        .scooter-pic img{
+            display: block;
+            width: 100%;
+        }
+    }
+/* FOOTER ENDS */
+
+/* ABOUT SECTION STARTS */
+.about-us{
+    margin:0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.about-us-header{
+    position: relative;
+    display: block;
+    height: 200px;
+    font-size: var(--font-size-header);
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: .5rem;
+    color: var(--official-color);
+    background-image: linear-gradient(to right,rgba(11, 12, 14, 0.774),rgba(11, 12, 15, 0.775)), url("../images/logistics-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about-us-header > span{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    /* top: 140px; */
+    margin: 7rem auto;
+    width: 200px;
+}
+
+.about-us-content{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    background-color: #ffc000;
+}
+
+.content-box{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.2rem;
+    margin:0 auto;
+    gap: 2rem;
+    max-width: 70rem;
+    color: var(--font-color-2);
+    background-color: rgb(0, 2, 2);
+    border-radius: 30px;
+}
+
+.content-box:nth-of-type(2){
+    flex-direction: column-reverse;
+}
+
+
+.image-content img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+.word-content{
+    line-height: 1.5;
+    font-size: 1.15rem;
+    font-weight: 400;
+    text-align: justify;
+}
+.topic, .topic-2{
+    font-size: larger;
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* MEDIA QUERIES FOR ABOUT US START */
+@media(min-width:700px)
+{
+    .about-us-content{
+        padding: 2rem;
+    }
+}
+
+@media(min-width:900px){
+    .content-box, .content-box:nth-of-type(2){
+        flex-direction: row;
+    }
+    .word-content{
+        position: relative;
+        width: 60%;
+        overflow-y: auto;
+    }    
+    .word-content p{
+        position: absolute;        
+    }
+    .image-content{
+        width: 40%;
+    }
+    .topic{
+        text-align: left;
+    }
+    .topic-2{
+        text-align: right;
+    }
+}
+/* @media(min-width:1000px)
+{
+    .about-us-content{
+        padding: 4rem;
+    }
+    .about-us-header{
+        height: 350px;
+    }
+    .about-us-header > span{
+        top: 140px;
+    }
+} */
+
+
+
+/* MEDIA QUERIES FOR ABOUT US ENDS */
+
+
+
+/* ABOUT SECTION ENDS */
+

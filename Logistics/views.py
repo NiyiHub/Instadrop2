@@ -45,7 +45,12 @@ def receiver_info(request):
 def shpmt_details_from_home(request):
     if request.method == 'POST':
         form = ShipmentForm(request.POST)
-        if form.is_valid():
+        if Parcel.payment_type == 'Transfer' and form.is_valid():
+            form.save()
+            messages.success(request, f'Shipment has been created successfully!')
+            return redirect('payment')
+
+        else:
             form.save()
             messages.success(request, f'Shipment has been created successfully!')
             return redirect('Instadrop-home')
