@@ -9,7 +9,7 @@ The app is built using the following technologies:
 * HTML
 * CSS
 * JavaScript
-# Installation
+# Getting Started
 To install and run the app, follow these steps:
 
 1. Clone this repository to your local machine.
